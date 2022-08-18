@@ -19,12 +19,12 @@ import {
 import {LogoIntro} from './LogoIntro';
 import {icons} from '../../assets/images';
 import {Background} from '../../components';
-import {Pressable, Text, TextInput} from 'react-native';
+import {Text, TextInput} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Logo = icons.logo_icon;
 
-const SignUp: React.FC = () => {
+const Login: React.FC = () => {
   const {navigate} = useNavigation();
 
   // return <LogoIntro />;
@@ -37,30 +37,29 @@ const SignUp: React.FC = () => {
           <SubTitle>Han'sei</SubTitle>
           <SubTitleMobile>mobile bank</SubTitleMobile>
         </Text>
-        <Title>Create an account</Title>
+        <Title>Let's sign in you!</Title>
       </HeaderContainer>
       <Container>
         <Form>
-          <Input placeholder="First name" />
-          <Input placeholder="Last name" />
           <Input placeholder="Email" />
           <Input placeholder="Password" />
-          <Input placeholder="Comfirm password" />
+          <FormFooter>
+            <FooterText>Remember-me</FooterText>
+            <FooterText>ForgotPassword</FooterText>
+          </FormFooter>
         </Form>
 
         <Button onPress={() => navigate('Home')}>
           <ButtonBackgroundBorder colors={['#00c6e9', '#000000', '#b517e8']}>
             <ButtonBackground colors={['#00c6e9', '#000000', '#b517e8']}>
-              <Title>Register</Title>
+              <Title>Go to home page</Title>
             </ButtonBackground>
           </ButtonBackgroundBorder>
         </Button>
-        <Pressable onPress={() => navigate('Home')}>
-          <FooterText>Already have an account? sign in</FooterText>
-        </Pressable>
+        <FooterText>Don't have an account sign up</FooterText>
       </Container>
     </Background>
   );
 };
 
-export default SignUp;
+export default Login;
